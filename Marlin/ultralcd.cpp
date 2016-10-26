@@ -1239,6 +1239,14 @@ void kill_screen(const char* lcd_msg) {
     MENU_ITEM(function, MSG_COOLDOWN, lcd_cooldown);
 
     //
+    // Change filament
+    //
+    #if ENABLED(FILAMENT_CHANGE_FEATURE)
+       MENU_ITEM(gcode, MSG_FILAMENTCHANGE, PSTR("M600"));
+    #endif
+
+
+    //
     // Switch power on/off
     //
     #if HAS_POWER_SWITCH
