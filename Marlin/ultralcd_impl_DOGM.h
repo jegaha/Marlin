@@ -380,9 +380,14 @@ static void lcd_implementation_status_screen() {
     if (IS_SD_PRINTING) {
       // Progress bar solid part
       u8g.drawBox(55, 50, (unsigned int)(71 * card.percentDone() * 0.01), 2 - (TALL_FONT_CORRECTION));
+      
+      // Percent Complete
+      u8g.setPrintPos(55,48);
+      u8g.print(itostr3(card.percentDone()));
+      u8g.print("%");
     }
 
-    u8g.setPrintPos(80,48);
+    u8g.setPrintPos(85,48);
 
     char buffer[10];
     duration_t elapsed = print_job_timer.duration();
