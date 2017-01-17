@@ -797,8 +797,8 @@
  *   The result is a mesh, best for large or uneven beds.
  */
 //#define AUTO_BED_LEVELING_3POINT
-#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_LINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -811,12 +811,13 @@
 
   // Set the number of grid points per dimension.
   #define ABL_GRID_POINTS_X 3
-  #define ABL_GRID_POINTS_Y ABL_GRID_POINTS_X
+  // #define ABL_GRID_POINTS_Y ABL_GRID_POINTS_X
+  #define ABL_GRID_POINTS_Y 5
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 30
-  #define RIGHT_PROBE_BED_POSITION 170
-  #define FRONT_PROBE_BED_POSITION 30
+  #define LEFT_PROBE_BED_POSITION 35
+  #define RIGHT_PROBE_BED_POSITION 165
+  #define FRONT_PROBE_BED_POSITION 35
   #define BACK_PROBE_BED_POSITION 260
 
   // The Z probe minimum outer margin (to validate G29 parameters).
@@ -836,7 +837,7 @@
     // Experimental Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-    //#define ABL_BILINEAR_SUBDIVISION
+    #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
       #define BILINEAR_SUBDIVISIONS 3
